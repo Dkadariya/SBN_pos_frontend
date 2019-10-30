@@ -3,25 +3,25 @@
         <div class="form-row">   
       <div class="form-group col-md-4">
         <label for="item_name">Item Name</label>
-        <input type="text" class="form-control" id="item_name" placeholder="Name">
+        <input type="text" class="form-control" [(ngModel)]="item.name" id="item_name" placeholder="Name" name="item-name">
       </div>
     </div> 
     <div class="form-row">   
             <div class="form-group col-md-4">
               <label for="item_cat">Categoty</label>
-              <input type="text" class="form-control" id="item_cat" placeholder="Grocery, Beauty, Home,...">
+              <input type="text" class="form-control" [(ngModel)]="item.category" id="item_cat" placeholder="Grocery, Beauty, Home,..." name="category">
             </div>
           </div> 
       <div class="form-row">
     <div class="form-group col-md-2">
         <label for="quant">Quantitiy</label>
-        <input type="text" class="form-control" id="quant" placeholder="total quantitiy">
+        <input type="text" class="form-control" [(ngModel)]="item.total_count" id="quant" placeholder="total quantitiy" name="quantity">
       </div>
     <div class="form-group col-md-2">
       <label for="price">Unit Price</label>
-      <input type="text" class="form-control" id="price" placeholder="price in $ E.g. 1.53">
+      <input type="text" class="form-control" [(ngModel)]="item.price" id="price" placeholder="price in $ E.g. 1.53" name="price">
     </div>
 </div>
-    <button type="submit" class="btn btn-primary">Add Item</button>
+    <button type="submit" (click)="addItem()" class="btn btn-primary">Add Item</button>
   </form>
 </div>
