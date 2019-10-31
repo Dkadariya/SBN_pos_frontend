@@ -50,4 +50,21 @@ export class ListInventComponent implements OnInit {
       this.items = data;
     });
   }
+
+  increment(id){
+    console.log(id);
+    this.sell_items.forEach(element => {
+      if (element.id===id){
+        element.quantity+=1;
+      }
+    });
+  }
+  decrement(id){
+    console.log(id);
+    this.sell_items.forEach(element => {
+      if (element.id===id){
+        element.quantity-=1;
+      }
+    });
+  }
 }

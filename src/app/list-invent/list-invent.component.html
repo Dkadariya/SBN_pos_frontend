@@ -13,7 +13,11 @@
                 <tbody>
                   <tr *ngFor="let item of sell_items">
                     <td>{{item.item}}</td>
-                    <td>{{item.quantity}}</td>
+                    <td>
+                      <button class="btn quant" (click)="decrement(item.id)">-</button>
+                      {{item.quantity}}
+                      <button class="btn quant" (click)="increment(item.id)">+</button>
+                    </td>
                     <td>{{item.price}}</td>
                     <td>{{item.price*item.quantity}}</td>
                     </tr>
