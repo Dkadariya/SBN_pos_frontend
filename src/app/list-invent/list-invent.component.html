@@ -1,0 +1,71 @@
+<div class="container">
+    <!-- <table class="table pos_grid">
+        <tr>
+            <td><span class="grid_title">Apple</span> <br><span class="grid_price"> price: $2.5</span><br>
+                <span class="grid_quant">available : 30</span>
+            </td>
+            <td>Banana</td>
+            <td>Orange </td>
+            <td>Kiwi</td>
+        </tr>
+        <tr>
+                <td>Apple</td>
+                <td>Banana</td>
+                <td>Orange </td>
+                <td>Kiwi</td>
+            </tr>
+    </table> -->
+    <!-- <tr *ngFor="let city of weather">
+            <td>{{city.name}}</td>
+            <td>{{city.weather[0].description}}</td>
+            <td>{{city.wind.speed}}</td>
+            <td>{{city.main.temp}}<span>&#176;</span> -->
+
+<div class="console">
+    <div class="list_item">
+        <table class="table table-striped itemize">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Qty.</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of sell_items">
+                    <td>{{item.item}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.price*item.quantity}}</td>
+                    </tr>
+                  <!-- </tr>
+                  <tr>
+                    <td>Mark</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <td>Mark</td>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+            <hr>
+        <div id="console-total">Total: {{total|currency}}</div><br>
+        <div id="console-disc">Discount: 0.0 </div><br>
+        <div id="console-tax">Tax:{{total*0.075|currency}} </div> 
+        <div id="console-sub">Sub Total:{{total+ (total*0.075)|currency}}  </div>
+</div>
+<div class="grid" >
+    <div class="grid_box" *ngFor="let item of items" (click)="appendItem(item.id,item.name,item.price)">
+            <span class="grid_title">{{item.name}}</span> <br><span class="grid_price"> price: {{item.price}}</span><br>
+            <span class="grid_quant">available : {{item.total_count}}</span>
+    </div>
+</div>
+    
+</div>

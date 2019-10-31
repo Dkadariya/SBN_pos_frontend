@@ -8,15 +8,18 @@ import { AppComponent } from './app.component';
 import { InventMgmtComponent } from './invent-mgmt/invent-mgmt.component';
 import { Routes, RouterModule } from '@angular/router';
 import { InventoryService } from './services/inventory.service';
+import { ListInventComponent } from './list-invent/list-invent.component';
 
 const appRoutes: Routes = [
   {path: 'inventory', component: InventMgmtComponent},
+  {path: 'sale', component: ListInventComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ]
 @NgModule({
   declarations: [
     AppComponent,
-    InventMgmtComponent
+    InventMgmtComponent,
+    ListInventComponent
   ],
   imports: [
     BrowserModule,
