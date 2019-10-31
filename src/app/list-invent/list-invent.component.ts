@@ -20,27 +20,32 @@ export class ListInventComponent implements OnInit {
   }
 
   appendItem(id, item, price) {
-    let new_entry=true;
+    let new_entry = true;
     this.sell_items.forEach(element => {
-      if(element.id===id){
-        element.quantity+=1;
-        new_entry=false;
-      } 
+      if (element.id === id) {
+        element.quantity += 1;
+        new_entry = false;
+      }
     });
-    if (new_entry){
+    if (new_entry) {
       this.sell_items.push({ "id": id, "item": item, "price": price, "quantity": 1 });
     }
     this.total += price;
   }
 
-  cancelOrder(){
-    this.sell_items.splice(0,this.sell_items.length);
+  cancelOrder() {
+    this.sell_items.splice(0, this.sell_items.length);
   }
 
-  placeOrder(){
+  placeOrder() {
     console.log(this.sell_items);
     this.invent.updateItems(this.sell_items).subscribe();
     this.sell_items.splice(0, this.sell_items.length);
+
+    setTimeout(() => { this.refresh(); }, 10);
+  }
+
+  refresh() {
     this.invent.list_all().subscribe(data => {
       this.items = data;
     });

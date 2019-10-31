@@ -1,0 +1,31 @@
+.main_container {
+  width: 80vw;
+  margin: auto;
+}
+
+.navbar {
+  display: block !important;
+  height: 9.3vh;
+}
+
+.nav-text{
+    height: 6vh;
+    padding: 2vh;
+    font-size: 1.3vw;
+}
+
+.btn-outline-info {
+  height: 6vh;
+  border-collapse: collapse;
+}
+
+.navbar-nav > .active > a {
+  color: #fff;
+  background-color: #00796b;
+}
+.nav-item > a:hover {
+  color: #fff;
+  background-color: #00796b;
+}
+
+

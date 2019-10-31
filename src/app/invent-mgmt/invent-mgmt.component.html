@@ -1,27 +1,55 @@
 <div class="container">
-<form>
-        <div class="form-row">   
-      <div class="form-group col-md-4">
-        <label for="item_name">Item Name</label>
-        <input type="text" class="form-control" [(ngModel)]="item.name" id="item_name" placeholder="Name" name="item-name">
-      </div>
-    </div> 
-    <div class="form-row">   
-            <div class="form-group col-md-4">
-              <label for="item_cat">Categoty</label>
-              <input type="text" class="form-control" [(ngModel)]="item.category" id="item_cat" placeholder="Grocery, Beauty, Home,..." name="category">
-            </div>
-          </div> 
+  <div class="add_form">
+    <form>
+        <div class="form-group">
+          <label for="item_name">Item Name</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="item.name"
+            id="item_name"
+            placeholder="Name"
+            name="item-name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="item_cat">Categoty</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="item.category"
+            id="item_cat"
+            placeholder="Grocery, Beauty, Home,..."
+            name="category"
+          />
+        </div>
       <div class="form-row">
-    <div class="form-group col-md-2">
-        <label for="quant">Quantitiy</label>
-        <input type="text" class="form-control" [(ngModel)]="item.total_count" id="quant" placeholder="total quantitiy" name="quantity">
+        <div class="form-group col-md-6">
+          <label for="quant">Quantitiy</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="item.total_count"
+            id="quant"
+            placeholder="total quantitiy"
+            name="quantity"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="price">Unit Price</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="item.price"
+            id="price"
+            placeholder="price in $ E.g. 1.53"
+            name="price"
+          />
+        </div>
       </div>
-    <div class="form-group col-md-2">
-      <label for="price">Unit Price</label>
-      <input type="text" class="form-control" [(ngModel)]="item.price" id="price" placeholder="price in $ E.g. 1.53" name="price">
-    </div>
-</div>
-    <button type="submit" (click)="addItem()" class="btn btn-primary">Add Item</button>
-  </form>
+      <button type="submit" (click)="addItem()" class="btn btn-primary">
+        Add Item
+      </button>
+    </form>
+  </div>
 </div>

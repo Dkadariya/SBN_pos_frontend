@@ -1,5 +1,12 @@
 .container{
     padding: 2%;
-    background-color: rgb(184, 184, 184);
+    background-color: #00796b;
     border-radius: 0px 0px 20px 20px;
+    color: #fff;
+    display: inline-block;
+}
+
+.add_form{
+    width: 40%;
+    float: right;
 }

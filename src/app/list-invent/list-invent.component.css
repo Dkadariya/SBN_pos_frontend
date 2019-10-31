@@ -1,43 +1,23 @@
 .container {
-  background-color: goldenrod;
-  height: 100vh;
+  background-color: #00796b;
+  height: 90vh;
   width: 90vw;
-}
-.pos_grid {
-  /* background-color: rgb(179, 51, 51); */
-  table-layout: fixed;
-  width: 45%;
-  /* border:1px solid black; */
-  border-collapse: separate;
-  border-spacing: 5px 10px;
-  /* margin-top: 10px; */
+  overflow: hidden;
 }
 
-.pos_grid td {
-  background-color: rgb(1, 168, 84);
-  padding: 10px;
-  vertical-align: middle;
-  text-align: center;
-  height: 9vw;
-  margin: 2px;
-  border: none;
-}
-.pos_grid td ::content {
-  position: relative;
-  color: #fff;
-  margin: auto;
-}
 
 .grid_title {
-  font-size: 2vw;
+  font-size: 1.3vw;
+  color: #fff;
 }
 
 .grid_price {
-  color: rgb(57, 57, 57);
+  font-size: 1.2vw;
+  color: rgb(224, 240, 179);
 }
 
 .grid_quant {
-  color: #fdd500;
+  color: #fdbc9c;
 }
 .grid {
   width: 50%;
@@ -50,7 +30,7 @@
   width: 10vw;
   height: 7vw;
   padding: 1vh;
-  background-color: rgb(1, 168, 84);
+  background-color: #00897b;
   text-align: center;
   display: inline-block;
   border-radius: 0.5vh;
@@ -61,7 +41,7 @@
 }
 
 .grid_box:active {
-  background-color: rgb(27, 219, 123);
+  background-color: #009688;
   box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
 }
 
@@ -70,13 +50,14 @@
   width: 50%;
   height: 80%;
   background-color: #fff;
-  border: solid 1px #000;
-  border-radius: 1vh;
-  margin-top: 4vh;
+  /* border: solid 1px #000;
+  border-radius: 1vh; */
+  /* margin-top: 4vh; */
   overflow: hidden;
+  height: 87vh;
 }
 .list_item{
-    height: 70%;
+    height: 65%;
     overflow-y: scroll;
     margin-top: 1vh;
 }
@@ -86,13 +67,16 @@
     border-collapse: collapse;
 }
 
+.total_container{
+  line-height: 3vh;
+}
 #console-total{
     float: right;
     font-size: 1.2vw;
     margin-right: 4vh;
 }
 #console-disc,#console-tax{
-    float: left;
+    /* float: left; */
     font-size: 1vw;
     margin-left: 4vh;
 }
