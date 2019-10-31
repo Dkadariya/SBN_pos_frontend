@@ -102,3 +102,11 @@
     font-weight: bold;
     margin-right: 4vh;
 }
+.order_btns{
+    display: block;
+    margin-top:5vh ;
+}
+.btn-danger, .btn-success{
+    margin-right: 2vw;
+    float: right;
+}

@@ -82,7 +82,15 @@ export class ListInventComponent implements OnInit {
     if (new_entry){
       this.sell_items.push({ "id": id, "item": item, "price": price, "quantity": 1 });
     }
-    
     this.total += price;
+  }
+
+  cancelOrder(){
+    this.sell_items.splice(0,this.sell_items.length);
+  }
+
+  placeOrder(){
+    console.log(this.sell_items);
+    this.sell_items.splice(0,this.sell_items.length);
   }
 }

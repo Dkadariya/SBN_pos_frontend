@@ -60,6 +60,10 @@
         <div id="console-disc">Discount: 0.0 </div><br>
         <div id="console-tax">Tax:{{total*0.075|currency}} </div> 
         <div id="console-sub">Sub Total:{{total+ (total*0.075)|currency}}  </div>
+        <div class="order_btns">
+            <button type="button" class="btn btn-success" (click)="placeOrder()">Pay order</button>
+            <button type="button" class="btn btn-danger" (click)="cancelOrder()">Cancel Order</button>
+    </div>
 </div>
 <div class="grid" >
     <div class="grid_box" *ngFor="let item of items" (click)="appendItem(item.id,item.name,item.price)">
