@@ -14,7 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const appRoutes: Routes = [
   {path: 'inventory', component: InventMgmtComponent},
   {path: 'sale', component: ListInventComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'}
+  {path: '#', redirectTo: 'sale', pathMatch: 'full'},
+  {path: '', redirectTo: 'sale', pathMatch: 'full'}
 ]
 @NgModule({
   declarations: [

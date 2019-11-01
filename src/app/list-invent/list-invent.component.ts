@@ -18,7 +18,7 @@ export class ListInventComponent implements OnInit {
   err_msg = '';
   success_msg='';
   close_sale = {};
-  discount;
+  discount=0;
 
   // injecting the service dependency into class through constructor
   constructor(private invent: InventoryService) { }
