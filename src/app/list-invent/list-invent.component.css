@@ -130,3 +130,10 @@ th {
   color: #000;
   text-align: center;
 }
+#menu_title{
+  font-size: 3.5vh;
+  margin-left: 35%;
+  font-weight: bold;
+  color: rgb(195, 194, 194);
+  text-decoration: underline;
+}

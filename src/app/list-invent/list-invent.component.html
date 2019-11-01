@@ -39,6 +39,7 @@
     </div>
 </div>
 <div class="grid">
+  <div id="menu_title">MENU</div>
     <div class="grid_box" *ngFor="let item of items" (click)="appendItem(item.id,item.name,item.price)">
             <span class="grid_title">{{item.name|uppercase}}</span> <br><span class="grid_price">{{item.price|currency}}</span><br>
             <span class="grid_quant">available : {{item.total_count}}</span>

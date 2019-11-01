@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { InventoryService } from '../services/inventory.service';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-list-invent',
   templateUrl: './list-invent.component.html',
   styleUrls: ['./list-invent.component.css']
 })
+
 export class ListInventComponent implements OnInit {
   // class variable initialization
   sell_items = [];
   total = 0;
-  order_no=0;
+  order_no = 0;
   items: any = [];
-  err_msg='';
+  err_msg = '';
 
   // injecting the service dependency into class through constructor
   constructor(private invent: InventoryService) { }
@@ -37,7 +39,7 @@ export class ListInventComponent implements OnInit {
       }
     });
     // if new order started, generate a new order no.
-    if(this.order_no===0){
+    if (this.order_no === 0) {
       this.rand_order();
     }
     // if item already in the list and quantity is available, increament its quantity value
@@ -47,9 +49,9 @@ export class ListInventComponent implements OnInit {
         this.total += price;
         new_entry = false;
       }
-      else if(element.id === id && element.quantity >= available) {
-        this.err_msg="No more quantity available for this item";
-        setTimeout(() => { this.err_msg=''; }, 2300);
+      else if (element.id === id && element.quantity >= available) {
+        this.err_msg = "No more quantity available for this item";
+        setTimeout(() => { this.err_msg = ''; }, 2300);
         new_entry = false;
       }
     });
@@ -64,17 +66,18 @@ export class ListInventComponent implements OnInit {
   //  function to clear the sell item list if order is cancelled
   cancelOrder() {
     this.sell_items.splice(0, this.sell_items.length);
-    this.total=0;
-    this.order_no=0;
+    this.total = 0;
+    this.order_no = 0;
   }
 
   //  function to update the item in the sercer database after the sell.
   placeOrder() {
     console.log(this.sell_items);
     this.invent.updateItems(this.sell_items).subscribe();
+    this.commitToFile();
     this.sell_items.splice(0, this.sell_items.length);
-    this.total=0;
-    this.order_no=0;
+    this.total = 0;
+    this.order_no = 0;
 
     setTimeout(() => { this.refresh(); }, 100);
   }
@@ -102,9 +105,9 @@ export class ListInventComponent implements OnInit {
         element.quantity += 1;
         this.total += element.price;
       }
-      else{
-        this.err_msg="No more quantity available for this item";
-        setTimeout(() => { this.err_msg=''; }, 2300);
+      else {
+        this.err_msg = "No more quantity available for this item";
+        setTimeout(() => { this.err_msg = ''; }, 2300);
       }
     });
   }
@@ -125,7 +128,14 @@ export class ListInventComponent implements OnInit {
     });
   }
   // function to random generate order number 
-  rand_order(){
- this.order_no=Math.floor(Math.random() * 100001) + 1000;
+  rand_order() {
+    this.order_no = Math.floor(Math.random() * 100001) + 1000;
+  }
+
+  commitToFile(){
+    let order_detail=["oder Name: SBN1234","order total: $35.6"];
+    const filename = "SBN".concat(this.order_no.toString());
+    const blob = new Blob(order_detail, { type: 'text/plain' });
+    saveAs(blob, filename);
   }
 }

@@ -9,6 +9,7 @@ import { InventMgmtComponent } from './invent-mgmt/invent-mgmt.component';
 import { Routes, RouterModule } from '@angular/router';
 import { InventoryService } from './services/inventory.service';
 import { ListInventComponent } from './list-invent/list-invent.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   {path: 'inventory', component: InventMgmtComponent},
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule
   ],
   providers: [InventoryService],
   bootstrap: [AppComponent]
