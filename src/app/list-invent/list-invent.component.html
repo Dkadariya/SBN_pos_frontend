@@ -1,6 +1,6 @@
 <div class="container">
 <div class="console">
-  <div class="order-details">Order number:</div>
+  <div class="order-details">Order number: SBN{{order_no}}</div>
     <div class="list_item">
         <table class="table table-striped itemize">
                 <thead>
@@ -20,11 +20,12 @@
                       <button class="btn quant" (click)="increment(item.id)">+</button>
                     </td>
                     <td>{{item.price}}</td>
-                    <td>{{item.price*item.quantity}}</td>
+                    <td>{{item.price*item.quantity|number:'1.2-2'}}</td>
                     </tr>
                 </tbody>
               </table>
             </div>
+            <div class="err_msg">{{err_msg}}</div>
             <hr>
             <div class="total_container">
         <div id="console-total">Total: {{total|currency}}</div><br>
@@ -33,11 +34,11 @@
         <div id="console-sub">Sub Total:{{total+ (total*0.075)|currency}}  </div>
       </div>
         <div class="order_btns">
-            <button type="button" class="btn btn-success" (click)="placeOrder()">Pay order</button>
+            <button type="button" class="btn btn-success" (click)="placeOrder()">Complete order</button>
             <button type="button" class="btn btn-danger" (click)="cancelOrder()">Cancel Order</button>
     </div>
 </div>
-<div class="grid" >
+<div class="grid">
     <div class="grid_box" *ngFor="let item of items" (click)="appendItem(item.id,item.name,item.price)">
             <span class="grid_title">{{item.name|uppercase}}</span> <br><span class="grid_price">{{item.price|currency}}</span><br>
             <span class="grid_quant">available : {{item.total_count}}</span>

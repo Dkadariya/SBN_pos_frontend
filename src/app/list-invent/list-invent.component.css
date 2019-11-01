@@ -5,7 +5,6 @@
   overflow: hidden;
 }
 
-
 .grid_title {
   font-size: 1.3vw;
   color: #fff;
@@ -24,6 +23,8 @@
   float: right;
   margin-top: 4vh;
   margin-right: -4vw;
+  overflow-y: scroll;
+  height: 92%;
 }
 
 .grid_box {
@@ -50,72 +51,82 @@
   width: 50%;
   height: 80%;
   background-color: #fff;
-  /* border: solid 1px #000;
-  border-radius: 1vh; */
-  /* margin-top: 4vh; */
   overflow: hidden;
   height: 87vh;
+  color: #535353;
 }
-.list_item{
-    height: 60%;
-    overflow-y: scroll;
-    margin-top: 1vh;
-}
-
-.itemize{
-    /* max-height: 1px; */
-    border-collapse: collapse;
+.list_item {
+  height: 60%;
+  overflow-y: scroll;
+  margin-top: 1vh;
+  color: #535353;
 }
 
-.total_container{
-  line-height: 3vh;
+.itemize {
+  /* max-height: 1px; */
+  border-collapse: collapse;
+  color: #535353;
 }
-#console-total{
-    float: right;
-    font-size: 1.2vw;
-    margin-right: 4vh;
+
+.total_container {
+  line-height: 2.4vh;
 }
-#console-disc,#console-tax{
-    /* float: left; */
-    font-size: 1vw;
-    margin-left: 4vh;
+#console-total {
+  float: right;
+  font-size: 1.2vw;
+  margin-right: 4vh;
 }
-#console-sub{
-    float: right;
-    font-size: 1.5vw;
-    font-weight: bold;
-    margin-right: 4vh;
+#console-disc,
+#console-tax {
+  /* float: left; */
+  font-size: 1vw;
+  margin-left: 4vh;
 }
-.order_btns{
-    display: block;
-    margin-top:5vh ;
+#console-sub {
+  float: right;
+  font-size: 1.5vw;
+  font-weight: bold;
+  margin-right: 4vh;
 }
-.btn-danger, .btn-success{
-    margin-right: 2vw;
-    float: right;
+.order_btns {
+  display: block;
+  margin-top: 5vh;
 }
-.quant{
-  display:inline-block;
+.btn-danger,
+.btn-success {
+  margin-right: 2vw;
+  float: right;
+}
+.quant {
+  display: inline-block;
   border: 1px solid #00897b;
   /* background-color: #00897b; */
   width: 2vw;
   height: 2vw;
   border-radius: 50%;
   padding: 0;
-  box-shadow: 0 5px 5px -1px rgba(0, 0, 0, 0.2);;
+  box-shadow: 0 5px 5px -1px rgba(0, 0, 0, 0.2);
 }
 
-.order-details{
+.order-details {
   font-size: 2vh;
   font-weight: bold;
-  margin-left: 2vh;
+  margin: 1vh 0vh 1vh 2vh;
+  text-align: center;
 }
 
-.item_quant{
-  margin-left:2vh;
+.item_quant {
+  margin-left: 2vh;
   margin-right: 2vh;
 }
 
-.table td,th {
-  text-align: center;   
+.table td,
+th {
+  text-align: center;
+}
+
+.err_msg{
+  background-color: rgb(233, 8, 8,0.5);
+  color: #000;
+  text-align: center;
 }

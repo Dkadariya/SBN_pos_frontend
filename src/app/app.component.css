@@ -8,10 +8,10 @@
   height: 9.3vh;
 }
 
-.nav-text{
-    height: 6vh;
-    padding: 2vh;
-    font-size: 1.3vw;
+.nav-text {
+  height: 6vh;
+  padding: 2vh;
+  font-size: 1.3vw;
 }
 
 .btn-outline-info {
@@ -27,5 +27,13 @@
   color: #fff;
   background-color: #00796b;
 }
-
-
+.comp {
+  display: inline-block;
+  font-size: 2.3vh;
+  line-height: 2.5vh;
+  margin: -1vh 0 0 0.8vh;
+}
+.navbar-head{
+  display: inline-block;
+  height: 100%;
+}
