@@ -26,14 +26,16 @@
               </table>
             </div>
             <div class="err_msg">{{err_msg}}</div>
+            <div class="success_msg">{{success_msg}}</div>
             <hr>
             <div class="total_container">
         <div id="console-total">Total: {{total|currency}}</div><br>
-        <div id="console-disc">Discount: 0.0 </div><br>
-        <div id="console-tax">Tax:{{total*0.075|currency}} </div> 
-        <div id="console-sub">Sub Total:{{total+ (total*0.075)|currency}}  </div>
+        <div id="console-disc">Discount: {{total*(discount/100)|currency}} ({{discount/100|percent}}) </div><br>
+        <div id="console-tax">Tax: {{total*0.075|currency}} </div> 
+        <div id="console-sub">Sub Total: {{(total-(total*(discount/100))+ (total)*0.075)|currency}}  </div>
       </div>
         <div class="order_btns">
+            <input type="text" class="form-control disc" placeholder="% Discount" [(ngModel)]="discount">
             <button type="button" class="btn btn-success" (click)="placeOrder()">Complete order</button>
             <button type="button" class="btn btn-danger" (click)="cancelOrder()">Cancel Order</button>
     </div>

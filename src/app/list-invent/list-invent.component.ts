@@ -16,7 +16,9 @@ export class ListInventComponent implements OnInit {
   order_no = 0;
   items: any = [];
   err_msg = '';
+  success_msg='';
   close_sale = {};
+  discount;
 
   // injecting the service dependency into class through constructor
   constructor(private invent: InventoryService) { }
@@ -81,7 +83,8 @@ export class ListInventComponent implements OnInit {
     this.close_sale['Order No'] = "SBN".concat(this.order_no.toString());
     this.close_sale['Total'] = (this.total).toFixed(2);
     this.close_sale['Tax'] = ((this.total) * 0.075).toFixed(2);
-    this.close_sale['Sub total'] = (this.total + ((this.total) * 0.075)).toFixed(2);
+    this.close_sale['Discount'] = this.total * (this.discount/100);
+    this.close_sale['Sub total'] = ((this.total-(this.total * (this.discount/100))) + ((this.total) * 0.075)).toFixed(2);
     this.sell_items.forEach((element, i) => {
       this.close_sale['item'.concat(i.toString())] = element;
     });
@@ -100,8 +103,8 @@ export class ListInventComponent implements OnInit {
     // custom tost to dispaly order complete message
     setTimeout(() => { this.refresh(); }, 100);
 
-    this.err_msg = "Sale completed! Odrer detail committed to the file.";
-    setTimeout(() => { this.err_msg = ''; }, 2300);
+    this.success_msg = "Sale completed! Odrer detail committed to the file.";
+    setTimeout(() => { this.success_msg = ''; }, 2300);
   }
 
   // call this function to get the fresh item lsit

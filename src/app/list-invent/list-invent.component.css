@@ -96,6 +96,7 @@
 .btn-success {
   margin-right: 2vw;
   float: right;
+  display: inline-block;
 }
 .quant {
   display: inline-block;
@@ -130,10 +131,21 @@ th {
   color: #000;
   text-align: center;
 }
+.success_msg{
+  background-color: rgba(4, 245, 133, 0.5);
+  color: #000;
+  text-align: center;
+}
 #menu_title{
   font-size: 3.5vh;
   margin-left: 35%;
   font-weight: bold;
   color: rgb(195, 194, 194);
   text-decoration: underline;
+}
+
+.disc{
+  width: 30%;
+  display: inline-block;
+  margin-left: 5%;
 }

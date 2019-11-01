@@ -22,13 +22,13 @@
           <input type="text" class="form-control" #item_quant="ngModel" pattern="[0-9]+" [(ngModel)]="item.total_count" id="quant" placeholder="total quantitiy" name="quantity" required/>
           <div *ngIf="item_quant.errors && (item_quant.dirty||item_quant.touched)" class="error">
               <p [hidden]="!item_quant.errors.pattern">Quantity must be a valid numbers</p>
-              <p [hidden]="!item_quant.errors.required">Item quantity is reuired</p>
+              <p [hidden]="!item_quant.errors.required">Item quantity is required</p>
             </div>
         </div>
         <div class="form-group col-md-6">
           <label for="price">Unit Price</label>
           <input
-            type="text" class="form-control" pattern="[0-9]*.[0-9]+" #item_price="ngModel" [(ngModel)]="item.price" id="price" placeholder="price in $ E.g. 1.53" name="price" required/>
+            type="text" class="form-control" pattern="[0-9]*.*[0-9]*" #item_price="ngModel" [(ngModel)]="item.price" id="price" placeholder="price in $ E.g. 1.53" name="price" required/>
             <div *ngIf="item_price.errors && (item_price.dirty||item_price.touched)" class="error">
                 <p [hidden]="!item_price.errors.pattern">Item price should be a valid numbers</p>
               <p [hidden]="!item_price.errors.required">Please provide price of item</p>
