@@ -1,6 +1,6 @@
 <div class="container">
   <div class="add_form">
-    <form>
+    <form #myForm="ngForm" (ngSubmit)="addItem()">
         <div class="form-group">
           <label for="item_name">Item Name</label>
           <input
@@ -47,7 +47,7 @@
           />
         </div>
       </div>
-      <button type="submit" (click)="addItem()" class="btn btn-primary">
+      <button type="submit" class="btn btn-primary">
         Add Item
       </button>
     </form>

@@ -16,7 +16,7 @@
                     <td>{{item.item}}</td>
                     <td>
                       <button class="btn quant" (click)="decrement(item.id)">-</button>
-                      {{item.quantity}}
+                       <span class="item_quant">{{item.quantity}}</span>
                       <button class="btn quant" (click)="increment(item.id)">+</button>
                     </td>
                     <td>{{item.price}}</td>
