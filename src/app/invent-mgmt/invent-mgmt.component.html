@@ -3,34 +3,37 @@
   <div class="add_form">
     <form #myForm="ngForm" (ngSubmit)="addItem()" name="add_item_form">
         <div class="form-group">
-          <p>
           <label for="item_name">Item Name</label>
-          <input type="text" name="item_name" ng-model="item_name" class="form-control" [(ngModel)]="item.name" d="item_name" placeholder="Name" name="item-name" required/>
-          <span ng-show="add_item_form.item_name.$touched && myForm.myName.$invalid">The name is required.</span>
-        </p>
+          <input type="text" #item_name="ngModel" class="form-control" [(ngModel)]="item.name" id="item_name" placeholder="Name" name="item-name" required/>
+          <div *ngIf="item_name.errors && (item_name.dirty||item_name.touched)" class="error">
+            <p [hidden]="!item_name.errors.required">Item Name is required</p>
+          </div>
         </div>
         <div class="form-group">
           <label for="item_cat">Categoty</label>
-          <input type="text" class="form-control" [(ngModel)]="item.category" id="item_cat" placeholder="Grocery, Beauty, Home,..." name="category"/>
+          <input type="text" class="form-control" #item_category="ngModel" [(ngModel)]="item.category" id="item_cat" placeholder="Grocery, Beauty, Home,..." name="category" required/>
+          <div *ngIf="item_category.errors && (item_category.dirty||item_category.touched)" class="error">
+              <p [hidden]="!item_category.errors.required">A category for item is required</p>
+            </div>
         </div>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="quant">Quantitiy</label>
-          <input type="text" class="form-control" [(ngModel)]="item.total_count" id="quant" placeholder="total quantitiy" name="quantity"/>
+          <input type="text" class="form-control" #item_quant="ngModel" [(ngModel)]="item.total_count" id="quant" placeholder="total quantitiy" name="quantity" required/>
+          <div *ngIf="item_quant.errors && (item_quant.dirty||item_quant.touched)" class="error">
+              <p [hidden]="!item_quant.errors.required">Quantity of item required</p>
+            </div>
         </div>
         <div class="form-group col-md-6">
           <label for="price">Unit Price</label>
           <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="item.price"
-            id="price"
-            placeholder="price in $ E.g. 1.53"
-            name="price"
-          />
+            type="text" class="form-control" #item_price="ngModel" [(ngModel)]="item.price" id="price" placeholder="price in $ E.g. 1.53" name="price" required/>
+            <div *ngIf="item_price.errors && (item_price.dirty||item_price.touched)" class="error">
+                <p [hidden]="!item_price.errors.required">Please provide price of item</p>
+              </div>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">
         Add Item
       </button>
     </form>
