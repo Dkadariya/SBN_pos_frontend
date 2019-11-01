@@ -105,7 +105,7 @@ export class ListInventComponent implements OnInit {
         element.quantity += 1;
         this.total += element.price;
       }
-      else {
+      else if(element.id === id && element.quantity >= available) {
         this.err_msg = "No more quantity available for this item";
         setTimeout(() => { this.err_msg = ''; }, 2300);
       }
