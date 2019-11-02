@@ -20,11 +20,11 @@
 }
 
 .navbar-nav > .active > a {
-  color: #fff;
+  color: #f0cd79;
   background-color: #00796b;
 }
 .nav-item > a:hover {
-  color: #fff;
+  color: #f0cd79;
   background-color: #00796b;
 }
 .comp {
@@ -33,7 +33,6 @@
   line-height: 2.5vh;
   margin: -1vh 0 0 0.8vh;
 }
-.navbar-head{
-  display: inline-block;
-  height: 100%;
+.navbar-brand{
+  color: #f0cd79;
 }
